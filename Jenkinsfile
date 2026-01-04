@@ -11,7 +11,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Pasul de clonare a codului
-                git branch: 'main', url: 'https://github.com/user-ul-tau/hapifyMe-tests.git'
+                git branch: 'main', url: 'https://github.com/gdatcu/qaSkillab-S22.git'
             }
         }
 
@@ -21,6 +21,15 @@ pipeline {
                 // Comanda de rulare a testelor.
                 // '-Dtest=LoginTest' este opțional, rulează doar un test specific
                 sh 'mvn clean test'
+            }
+        }
+        stage('Archive Results') {
+            steps {
+                // Salvăm rapoartele JUnit standard și orice fișier din surefire-reports
+                junit '**/target/surefire-reports/*.xml'
+
+                // Arhivăm tot folderul target pentru a-l putea descărca manual
+                archiveArtifacts artifacts: 'target/*.jar, target/surefire-reports/*', allowEmptyArchive: true
             }
         }
     }
