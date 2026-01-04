@@ -3,8 +3,8 @@ pipeline {
 
     tools {
         // Asigură-te că Maven este configurat în "Global Tool Configuration" cu numele 'M3'
-        maven 'M3'
-        jdk 'Java17'
+        maven 'Maven 3.8.x'
+        jdk 'JDK 21' // Rezolvă eroarea 'invalid target release: 21'
     }
 
     stages {
