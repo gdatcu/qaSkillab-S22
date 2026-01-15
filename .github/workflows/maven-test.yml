@@ -30,7 +30,7 @@ jobs:
 
       # 4. Configurarea Artefactelor (Raportul de Testare)
       # Salvăm folderul surefire-reports pentru a putea vedea ce teste au picat
-      # ATENȚIE: Folosim v4 deoarece v3 este depreciat
+      # ATENȚIE: Folosim v4 deoarece v3 este depreciat!
       - name: Upload Test Report
         if: always() # Rulează pasul chiar dacă testele au picat
         uses: actions/upload-artifact@v4

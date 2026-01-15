@@ -58,6 +58,21 @@
             <scope>runtime</scope>
         </dependency>
 
+        <!-- Driver MySQL pentru conectare JDBC -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.33</version>
+        </dependency>
+
+        <!-- JUnit 5 pentru rularea testelor -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.9.2</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
